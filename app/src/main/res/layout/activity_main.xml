@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".Activities.MainActivity"
+    tools:deviceIds="wear"
+    android:id="@+id/parent_layout"
+    android:onClick="onClickParentLayout">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        tools:ignore="UselessParent"
+        android:id="@+id/scrollView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="400sp">
+
+            <LinearLayout
+                android:layout_width="165sp"
+                android:layout_height="45sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25sp"
+                android:background="@drawable/square_blue"
+                android:id="@+id/beats_layout">
+
+                <ImageView
+                    android:id="@+id/beat_square_1"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5sp"
+                    android:padding="3sp"
+                    android:src="@drawable/square_white"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/beat_square_2"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5sp"
+                    android:padding="3sp"
+                    android:src="@drawable/square_white"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/beat_square_3"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5sp"
+                    android:padding="3sp"
+                    android:src="@drawable/square_white"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/beat_square_4"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5sp"
+                    android:padding="3sp"
+                    android:src="@drawable/square_white"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="85sp">
+
+                <ImageButton
+                    android:id="@+id/start_button"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:background="@drawable/square_blue"
+                    android:onClick="onClickStartButton"
+                    android:src="@drawable/ic_baseline_arrow_right_60"
+                    tools:ignore="ContentDescription" />
+
+                <Button
+                    android:id="@+id/BPM_button"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginStart="20sp"
+                    android:background="@drawable/square_blue"
+                    android:onClick="onClickBpmButton"
+                    android:padding="3sp"
+                    android:text="@string/bpm_n"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/settings_button"
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="165sp"
+                android:background="@drawable/ic_baseline_settings_24"
+                android:onClick="onClickSettingsButton" />
+
+            <!-- Sound setting section -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="15sp"
+                android:text="@string/glosnosc"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="265sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="290sp">
+
+                <ImageButton
+                    android:layout_width="40sp"
+                    android:layout_height="40sp"
+                    android:src="@drawable/ic_minus_24"
+                    android:background="@drawable/square_blue"
+                    android:layout_marginEnd="8sp"
+                    android:id="@+id/volume_down_button"
+                    android:onClick="onClickVolumeDownButton"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="40sp"
+                    android:layout_height="40sp"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="28sp"
+                    android:id="@+id/volume_view"/>
+
+                <ImageButton
+                    android:layout_width="40sp"
+                    android:layout_height="40sp"
+                    android:src="@drawable/ic_plus_24"
+                    android:layout_marginStart="8sp"
+                    android:background="@drawable/square_blue"
+                    android:id="@+id/volume_up_button"
+                    android:onClick="onClickVolumeUpButton"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20sp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/tryb"
+                android:layout_marginTop="340sp" />
+
+            <Button
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="365sp"
+                android:id="@+id/vibrate_mode_button"
+                android:background="@drawable/ic_baseline_volume_up_24"
+                android:onClick="onClickVibrateModeButton"/>
+
+            <Button
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="420sp"
+                android:layout_marginBottom="5sp"
+                android:background="@drawable/ic_baseline_arrow_back_24"
+                android:onClick="onClickBackSettingsButton" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
