@@ -78,7 +78,7 @@ public class MainActivity extends WearableActivity {
         currentTact = 0;
 
         // Initialization of ScrollView
-        scrollView = findViewById(R.id.scrollView);
+        scrollView = findViewById(R.id.scroll_view_main_activity);
         scrollView.setOnTouchListener((v, event) -> true);
 
         // Initialization of vibrator and vibration effects
@@ -102,13 +102,13 @@ public class MainActivity extends WearableActivity {
         isVibrateModeActive = sharedPreferences.getBoolean(IS_VIBRATE_MODE_ACTIVE, false);
 
         // Initialization of buttons and layout
-        parentLayout = findViewById(R.id.parent_layout);
+        parentLayout = findViewById(R.id.parent_layout_main_activity);
         volumeView = findViewById(R.id.volume_view);
         volumeView.setText(String.valueOf(Math.round(volume / 2 * 10)));
         startButton = findViewById(R.id.start_button);
         bpmButton = findViewById(R.id.BPM_button);
         bpmButton.setText("BPM:\n" + beatsPerMinute);
-        vibrateModeButton = findViewById(R.id.vibrate_mode_button);
+        vibrateModeButton = findViewById(R.id.vibrate_mode_button_main_activity);
 
         // Change icon on mode button
         if (isVibrateModeActive) {
@@ -116,7 +116,6 @@ public class MainActivity extends WearableActivity {
         } else {
             vibrateModeButton.setBackground(getDrawable(R.drawable.ic_baseline_volume_up_24));
         }
-
 
         // Initialization of beats
         beats = new ImageView[4];
@@ -194,7 +193,7 @@ public class MainActivity extends WearableActivity {
 
     public void onClickSettingsButton(View v) {
         // Go to settings layout
-        scrollView.scrollTo(0, scrollView.getBottom());
+        scrollView.scrollTo(0, scrollView.getBottom() + 100);
     }
 
     public void onClickBackSettingsButton(View view) {

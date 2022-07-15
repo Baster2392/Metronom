@@ -7,7 +7,7 @@
     android:padding="@dimen/box_inset_layout_padding"
     tools:context=".Activities.MainActivity"
     tools:deviceIds="wear"
-    android:id="@+id/parent_layout"
+    android:id="@+id/parent_layout_main_activity"
     android:onClick="onClickParentLayout">
 
     <ScrollView
@@ -15,11 +15,12 @@
         android:layout_height="match_parent"
         android:scrollbars="none"
         tools:ignore="UselessParent"
-        android:id="@+id/scrollView">
+        android:id="@+id/scroll_view_main_activity">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="400sp">
+            android:layout_height="wrap_content"
+            android:id="@+id/main_view_main_activity">
 
             <LinearLayout
                 android:layout_width="165sp"
@@ -27,7 +28,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="25sp"
                 android:background="@drawable/square_blue"
-                android:id="@+id/beats_layout">
+                android:id="@+id/beats_layout_main_activity">
 
                 <ImageView
                     android:id="@+id/beat_square_1"
@@ -72,10 +73,12 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/buttons_layout_main_activity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/beats_layout_main_activity"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="85sp">
+                android:layout_marginTop="15dp">
 
                 <ImageButton
                     android:id="@+id/start_button"
@@ -100,11 +103,12 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/settings_button"
+                android:id="@+id/settings_button_main_activity"
                 android:layout_width="30sp"
                 android:layout_height="30sp"
+                android:layout_below="@id/buttons_layout_main_activity"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="165sp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/ic_baseline_settings_24"
                 android:onClick="onClickSettingsButton" />
 
@@ -113,15 +117,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="15sp"
-                android:text="@string/glosnosc"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="265sp" />
+                android:layout_marginTop="120sp"
+                android:layout_below="@id/settings_button_main_activity"
+                android:id="@+id/description1_main_activity"
+                android:text="@string/glosnosc" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="290sp">
+                android:layout_marginTop="5sp"
+                android:layout_below="@id/description1_main_activity"
+                android:id="@+id/volume_buttons_main_activity">
 
                 <ImageButton
                     android:layout_width="40sp"
@@ -158,22 +166,26 @@
                 android:layout_height="20sp"
                 android:layout_centerHorizontal="true"
                 android:text="@string/tryb"
-                android:layout_marginTop="340sp" />
+                android:layout_below="@+id/volume_buttons_main_activity"
+                android:layout_marginTop="10sp"
+                android:id="@+id/description2_main_activity"/>
 
             <Button
                 android:layout_width="40sp"
                 android:layout_height="40sp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="365sp"
-                android:id="@+id/vibrate_mode_button"
+                android:layout_marginTop="10sp"
+                android:layout_below="@+id/description2_main_activity"
+                android:id="@+id/vibrate_mode_button_main_activity"
                 android:background="@drawable/ic_baseline_volume_up_24"
                 android:onClick="onClickVibrateModeButton"/>
 
             <Button
-                android:layout_width="30sp"
-                android:layout_height="30sp"
+                android:layout_width="32dp"
+                android:layout_height="34dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="420sp"
+                android:layout_marginTop="10sp"
+                android:layout_below="@id/vibrate_mode_button_main_activity"
                 android:layout_marginBottom="5sp"
                 android:background="@drawable/ic_baseline_arrow_back_24"
                 android:onClick="onClickBackSettingsButton" />
