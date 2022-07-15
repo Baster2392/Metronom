@@ -14,7 +14,6 @@ import android.support.wearable.activity.WearableActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -49,7 +48,7 @@ public class OptionsActivity extends WearableActivity implements AdapterView.OnI
         periodSilent = sharedPreferences.getInt(PERIOD_SILENT, 4);
 
         // Initialization of seekbar and creating tracking method
-        seekBar = findViewById(R.id.seekbar);
+        seekBar = findViewById(R.id.seekbar_options_activity);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -89,7 +88,7 @@ public class OptionsActivity extends WearableActivity implements AdapterView.OnI
                     break;
 
                 case 2: // how long silent beats spinner
-                    idSpinnerView = R.id.how_long_silent_spinner;
+                    idSpinnerView = R.id.how_long_silent_spinner_options_activity;
                     idStringArray = R.array.how_long_silent_spinner_array;
                     break;
 
