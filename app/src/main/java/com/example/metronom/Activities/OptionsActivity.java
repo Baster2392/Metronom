@@ -112,27 +112,18 @@ public class OptionsActivity extends WearableActivity implements AdapterView.OnI
 
         // Fill layout with data
         seekBar.setProgress(beatsPerMinute);
-
-        switch (meter1) {
-            case 4: noteSpinner[0].setSelection(0); break;
-            case 8: noteSpinner[0].setSelection(1); break;
-            case 16: noteSpinner[0].setSelection(2); break;
-        }
-
+        noteSpinner[0].setSelection(meter1 - 1);
 
         switch (meter2) {
-            case 4: noteSpinner[1].setSelection(0); break;
-            case 8: noteSpinner[1].setSelection(1); break;
-            case 16: noteSpinner[1].setSelection(2); break;
+            case 1: noteSpinner[1].setSelection(0); break;
+            case 2: noteSpinner[1].setSelection(1); break;
+            case 4: noteSpinner[1].setSelection(2); break;
+            case 8: noteSpinner[1].setSelection(3); break;
+            case 16: noteSpinner[1].setSelection(4); break;
         }
 
         if (isMuteModeActive) {
-            switch (howLongSilent) {
-                case 2: noteSpinner[2].setSelection(1); break;
-                case 4: noteSpinner[2].setSelection(2); break;
-                case 8: noteSpinner[2].setSelection(3); break;
-                case 16: noteSpinner[2].setSelection(4); break;
-            }
+            noteSpinner[2].setSelection(howLongSilent);
         } else {
             noteSpinner[2].setSelection(0);
         }

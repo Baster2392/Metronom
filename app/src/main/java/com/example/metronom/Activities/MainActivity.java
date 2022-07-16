@@ -193,12 +193,12 @@ public class MainActivity extends WearableActivity {
 
     public void onClickSettingsButton(View v) {
         // Go to settings layout
-        scrollView.scrollTo(0, scrollView.getBottom() + 100);
+        scrollView.scrollTo(0, findViewById(R.id.main_view_main_activity).getBottom());
     }
 
     public void onClickBackSettingsButton(View view) {
         // Return to main view from settings
-        scrollView.scrollTo(0, scrollView.getTop());
+        scrollView.scrollTo(0, findViewById(R.id.main_view_main_activity).getTop());
 
         SharedPreferences.Editor editor = Functions.getMySharedPreferences(this).edit();
         editor.putFloat(VOLUME, volume);
